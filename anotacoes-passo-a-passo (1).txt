@@ -1,0 +1,57 @@
+# Criação da virtual env
+
+# Caso nao tenha a biblioteca da virtualenv instalada
+pip install virtualenv
+
+# Criar a virtualenv
+# Criar a estrutura de pastas para o projeto
+
+virtualenv nome_virtual_env
+
+# Para ativar a nome_virtual_env
+# Entrar dentro da pasta Scripts do projeto
+
+digitar activate
+
+# Criação do Projeto do Django
+
+django-admin startproject nomeprojeto
+
+# Cria as variaveis de ambiente de configuração do  #projeto do Django
+set DJANGO_SETTINGS_MODULE=projdjango.settings
+
+
+# Cria as estrutura do banco de dados do Projeto
+python manage.py migrate
+
+# Cria um novo Aplicativo 
+django-admin startapp nomeapp
+
+# Copia os templates para a pasta  do Aplicativo
+# Editar os arquivos de models.py, views.py, urls.py e se quiser o admin.py
+
+# Models.py  # Modela os campos da tabela do banco de dados
+# Views.py # Cria as ação das paginas e vinculas os templates html
+# Urls.py # Cria as rotas de endereço web
+
+
+## Cria a estrutura de Banco de dados para o APP
+# Baseado no modelo criado no models.py
+
+python manage.py makemigrations blogsite
+
+## Exibe em shell a estrutura de banco que será criada
+
+python manage.py sqlmigrate blogsite 0001
+
+### Comitar as alteração de banco
+
+python manage.py migrate
+
+## Adicionar as rotas ao arquivos urls.py do projeto.
+
+## E Roda o projeto do DJANGO
+
+python manage.py runserver
+
+
